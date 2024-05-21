@@ -1,5 +1,3 @@
-package br.com.mazeProject.projetoPOO;
-
 import br.com.mazeProject.projetoPOO.tesouro.Tesouro;
 
 import java.util.ArrayList;
