@@ -5,9 +5,21 @@ public abstract class Tesouro {
     private int posicaox;
     private int posicaoy;
     private int valorPontos;
-    public Tesouro(int posicaox, int posicaoy, String descricao){
+    private char simbolo;
+    public Tesouro(int posicaox, int posicaoy){
         this.posicaox = posicaox;
         this.posicaoy = posicaoy;
+    }
+
+    public char getSimbolo() {
+        return simbolo;
+    }
+
+    public void setSimbolo(char simbolo) {
+        this.simbolo = simbolo;
+    }
+
+    public void setDescricao(String descricao) {
         this.descricao = descricao;
     }
 
@@ -18,7 +30,7 @@ public abstract class Tesouro {
     void setPosicaox(int posicaox){
         this.posicaox = posicaox;
     }
-    int getPosicaox(){
+    public int getPosicaox(){
         return posicaox;
     }
 

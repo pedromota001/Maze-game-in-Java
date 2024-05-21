@@ -1,6 +1,9 @@
 package br.com.mazeProject.projetoPOO;
 
 import br.com.mazeProject.projetoPOO.perigos.Perigo;
+import br.com.mazeProject.projetoPOO.tesouro.KitMedico;
+import br.com.mazeProject.projetoPOO.tesouro.Localizador;
+import br.com.mazeProject.projetoPOO.tesouro.MoedaDeOuro;
 import br.com.mazeProject.projetoPOO.tesouro.Tesouro;
 
 import java.util.ArrayList;
@@ -20,7 +23,7 @@ public class Labirinto {
     }
 
     public void gerarLabirinto(){
-
+        //implementar
     }
 
 
@@ -33,18 +36,26 @@ public class Labirinto {
             char tipoTesouro = (char) ('A' + tipoAleatorio);
             switch (tipoTesouro) {
                 case 'A':
-                    estrutura[x][y] = 'A';
-
+                    MoedaDeOuro moedaDeOuro = new MoedaDeOuro(x,y);
+                    estrutura[moedaDeOuro.getPosicaox()][moedaDeOuro.getPosicaoy()] = moedaDeOuro.getSimbolo();
+                    listaDeTesouros.add(moedaDeOuro);
                     break;
                 case 'B':
-                    estrutura[x][y] = 'B';
+                    Localizador localizador = new Localizador(x,y);
+                    estrutura[localizador.getPosicaox()][localizador.getPosicaoy()] = localizador.getSimbolo();
+                    listaDeTesouros.add(localizador);
                     break;
                 case 'C':
-                    estrutura[x][y] = 'C';
-
+                    KitMedico kitMedico = new KitMedico(x,y);
+                    estrutura[kitMedico.getPosicaox()][kitMedico.getPosicaoy()] = kitMedico.getSimbolo();
+                    listaDeTesouros.add(kitMedico);
                     break;
             }
         }
     }
+    public void adicionarPerigosAleatorios(){
+        //implementar
+    }
 }
+
 
