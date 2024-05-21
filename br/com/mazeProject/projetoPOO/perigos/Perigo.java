@@ -3,8 +3,10 @@ package br.com.mazeProject.projetoPOO.perigos;
 public abstract class Perigo {
     private int posicaoLabirinto;
     private int danoPotencial;
-    public Perigo(int posicaoLabirinto){
+
+    public Perigo(int posicaoLabirinto, int danoPotencial){
         this.posicaoLabirinto = posicaoLabirinto;
+        this.danoPotencial = danoPotencial;
     }
 
     void setPosicaoLabirinto(int posicaoLabirinto){

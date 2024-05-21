@@ -1,19 +1,33 @@
 package br.com.mazeProject.projetoPOO.tesouro;
 
 public abstract class Tesouro {
-    private int posicao;
+    private String descricao;
+    private int posicaox;
+    private int posicaoy;
     private int valorPontos;
-    public Tesouro(int posicao, int valorPontos){
-        this.posicao = posicao;
-        this.valorPontos = valorPontos;
+    public Tesouro(int posicaox, int posicaoy, String descricao){
+        this.posicaox = posicaox;
+        this.posicaoy = posicaoy;
+        this.descricao = descricao;
     }
 
-
-    void setPosicao(int posicao){
-        this.posicao = posicao;
+    public String getDescricao() {
+        return descricao;
     }
-    int getPosicao(){
-        return posicao;
+
+    void setPosicaox(int posicaox){
+        this.posicaox = posicaox;
+    }
+    int getPosicaox(){
+        return posicaox;
+    }
+
+    public int getPosicaoy() {
+        return posicaoy;
+    }
+
+    public void setPosicaoy(int posicaoy) {
+        this.posicaoy = posicaoy;
     }
 
     void setValorPontos(int valorPontos){
@@ -22,5 +36,6 @@ public abstract class Tesouro {
     int getValorPontos(){
         return valorPontos;
     }
+
 
 }

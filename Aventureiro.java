@@ -33,5 +33,7 @@ public class Aventureiro {
         this.tesourosColetados = tesourosColetados;
     }
 
-
+    public ArrayList<Tesouro> getTesourosColetados() {
+        return tesourosColetados;
+    }
 }
