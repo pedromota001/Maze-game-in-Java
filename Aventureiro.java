@@ -1,3 +1,5 @@
+import br.com.mazeProject.projetoPOO.tesouro.Tesouro;
+
 import java.util.ArrayList;
 
 public class Aventureiro {
@@ -31,5 +33,5 @@ public class Aventureiro {
         this.tesourosColetados = tesourosColetados;
     }
 
-    
+
 }

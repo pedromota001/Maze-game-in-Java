@@ -1,3 +1,5 @@
+package br.com.mazeProject.projetoPOO.tesouro;
+
 public class Tesouro {
     private String nome;
     private int posicao;

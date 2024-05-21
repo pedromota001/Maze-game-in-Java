@@ -1,3 +1,5 @@
+package br.com.mazeProject.projetoPOO.perigos;
+
 public class Perigo {
     private int posicaoLabirinto;
     private int danoPotencial;
