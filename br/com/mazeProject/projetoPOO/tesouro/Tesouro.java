@@ -1,21 +1,13 @@
 package br.com.mazeProject.projetoPOO.tesouro;
 
-public class Tesouro {
-    private String nome;
+public abstract class Tesouro {
     private int posicao;
     private int valorPontos;
-    public Tesouro(String nome, int posicao, int valorPontos){
-        this.nome = nome;
+    public Tesouro(int posicao, int valorPontos){
         this.posicao = posicao;
         this.valorPontos = valorPontos;
     }
 
-    void setNome(String nome){
-        this.nome = nome;
-    }
-    String getNome(){
-        return nome;
-    }
 
     void setPosicao(int posicao){
         this.posicao = posicao;
