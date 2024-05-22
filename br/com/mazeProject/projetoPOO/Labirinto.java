@@ -24,6 +24,7 @@ public class Labirinto {
 
     public void gerarLabirinto(){
         //implementar
+        //a
     }
 
 
