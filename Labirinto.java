@@ -1,5 +1,3 @@
-package br.com.mazeProject.projetoPOO;
-
 import br.com.mazeProject.projetoPOO.perigos.BuracoMetal;
 import br.com.mazeProject.projetoPOO.perigos.Espinho;
 import br.com.mazeProject.projetoPOO.perigos.Fogo;
@@ -35,7 +33,7 @@ public class Labirinto {
                     adicionarTesourosAleatorios(i,j); // adiciona um tesouro aleatorio na posição que o loop se encontra da matriz.
                 }
                 else if(tesouroOuPerigo == 1){
-                    // adicionar funcao de adicionar perigo
+                    adicionarPerigosAleatorios(i,j);
                 }
                 else{
                     break;
@@ -87,6 +85,53 @@ public class Labirinto {
                 estrutura[x][y] = buracoMetal.getSimbolo();
                 listaDePerigos.add(buracoMetal);
                 break;
+        }
+    }
+
+    public void exibicaoEmovimentacaoAventureiro(Aventureiro aventureiro){
+        int posicaoxA = aventureiro.getPosicaox();
+        int posicaoyA = aventureiro.getPosicaoy();
+        if(estrutura[posicaoxA][posicaoyA] == 'M'){
+            System.out.println("Parabens, voce ganhou uma moeda de ouro!!! Agora ja sao: " + aventureiro.getQtdMoedas());
+        }
+        else if(estrutura[posicaoxA][posicaoyA] == 'L'){
+            System.out.println("Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ");
+            //implementar logica de revelacao
+        }
+        else if(estrutura[posicaoxA][posicaoyA] == 'K'){
+            System.out.println("Voce teve 25 pontos da sua vida recuperada, tome cuidado!");
+        }
+        else if(estrutura[posicaoxA][posicaoyA] == 'F'){
+            System.out.println("Voce caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!");
+            aventureiro.tiraVida(25);
+            System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
+        }
+        else if(estrutura[posicaoxA][posicaoyA] == 'E'){
+            System.out.println("Voce caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida! ");
+            aventureiro.tiraVida(15);
+            System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
+        }
+        else{
+            System.out.println("Voce caiu num buraco, tome cuidado, perdeu 40 pontos da sua vida! ");
+            aventureiro.tiraVida(40);
+            System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
+        }
+    }
+
+    public void exibeLabirinto() {
+        System.out.print("  ");
+        for (int coluna = 0; coluna < tamanho; coluna++) {
+            System.out.print(coluna + " ");
+        }
+        System.out.println();
+
+        for (int linha = 0; linha < tamanho; linha++) {
+            System.out.print(linha + " ");
+
+            for (int coluna = 0; coluna < tamanho; coluna++) {
+                System.out.print(estrutura[linha][coluna] + " ");
+            }
+            System.out.println();
         }
     }
 }

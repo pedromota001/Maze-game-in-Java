@@ -1,7 +1,7 @@
 package br.com.mazeProject.projetoPOO.tesouro;
 
 public abstract class Tesouro {
-    private String descricao;
+
     private int posicaox;
     private int posicaoy;
     private int valorPontos;
@@ -19,13 +19,6 @@ public abstract class Tesouro {
         this.simbolo = simbolo;
     }
 
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-
-    public String getDescricao() {
-        return descricao;
-    }
 
     void setPosicaox(int posicaox){
         this.posicaox = posicaox;

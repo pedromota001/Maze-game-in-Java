@@ -5,8 +5,6 @@ public class KitMedico extends Tesouro{
 
     public KitMedico(int posicaox, int posicaoy) {
         super(posicaox, posicaoy);
-        setDescricao("25 pontos da sua vida foi recuperada!");
-        setValorPontos(15);
         setSimbolo('K');
     }
 }
