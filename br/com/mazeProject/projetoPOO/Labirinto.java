@@ -24,30 +24,47 @@ public class Labirinto {
 
     public void gerarLabirinto(){
         //implementar
+        Random random = new Random();
+        for(int i = 0; i < tamanho; i++){
+            for(int j = 0; j < tamanho; j++){
+                int tesouroOuPerigo = random.nextInt(3); // 0 a 2
+
+                if(tesouroOuPerigo == 0){
+                    adicionarTesourosAleatorios(i,j); // adiciona um tesouro aleatorio na posição que o loop se encontra da matriz.
+                }
+
+                else if(tesouroOuPerigo == 1){
+                    // adicionar funcao de adicionar perigo
+                }
+
+                else{
+                    break;
+                }
+            }
+        }
     }
 
 
-    private void adicionarTesourosAleatorios() {
+    private void adicionarTesourosAleatorios(int x, int y) {
         Random random = new Random();
         for (int i = 0; i < 3; i++) {
-            int x = random.nextInt(tamanho);
-            int y = random.nextInt(tamanho);
+
             int tipoAleatorio = random.nextInt(3); // Gera um número aleatório entre 0 e 2
             char tipoTesouro = (char) ('A' + tipoAleatorio);
             switch (tipoTesouro) {
                 case 'A':
                     MoedaDeOuro moedaDeOuro = new MoedaDeOuro(x,y);
-                    estrutura[moedaDeOuro.getPosicaox()][moedaDeOuro.getPosicaoy()] = moedaDeOuro.getSimbolo();
+                    estrutura[x][y] = moedaDeOuro.getSimbolo();
                     listaDeTesouros.add(moedaDeOuro);
                     break;
                 case 'B':
                     Localizador localizador = new Localizador(x,y);
-                    estrutura[localizador.getPosicaox()][localizador.getPosicaoy()] = localizador.getSimbolo();
+                    estrutura[x][y] = localizador.getSimbolo();
                     listaDeTesouros.add(localizador);
                     break;
                 case 'C':
                     KitMedico kitMedico = new KitMedico(x,y);
-                    estrutura[kitMedico.getPosicaox()][kitMedico.getPosicaoy()] = kitMedico.getSimbolo();
+                    estrutura[x][y] = kitMedico.getSimbolo();
                     listaDeTesouros.add(kitMedico);
                     break;
             }
