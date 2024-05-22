@@ -24,30 +24,33 @@ public class Labirinto {
 
     public void gerarLabirinto(){
         //implementar
+        Random random = new Random();
+        for(int i = 0; i < tamanho; i++){
+            for(int y = 0; y < tamanho; y++){
+                int tesouroOuPerigo = random.nextInt(3); // numero aleatorio entre 0 e 2
+                if(tesouroOuPerigo == 0){ //para adicionar tesouro naquela posição do labirinto
+
+                }
+            }
+        }
     }
 
-
-    private void adicionarTesourosAleatorios() {
+    private void adicionarTesourosAleatorios(int x, int y) {
         Random random = new Random();
         for (int i = 0; i < 3; i++) {
-            int x = random.nextInt(tamanho);
-            int y = random.nextInt(tamanho);
             int tipoAleatorio = random.nextInt(3); // Gera um número aleatório entre 0 e 2
             char tipoTesouro = (char) ('A' + tipoAleatorio);
             switch (tipoTesouro) {
                 case 'A':
                     MoedaDeOuro moedaDeOuro = new MoedaDeOuro(x,y);
-                    estrutura[moedaDeOuro.getPosicaox()][moedaDeOuro.getPosicaoy()] = moedaDeOuro.getSimbolo();
                     listaDeTesouros.add(moedaDeOuro);
                     break;
                 case 'B':
                     Localizador localizador = new Localizador(x,y);
-                    estrutura[localizador.getPosicaox()][localizador.getPosicaoy()] = localizador.getSimbolo();
                     listaDeTesouros.add(localizador);
                     break;
                 case 'C':
                     KitMedico kitMedico = new KitMedico(x,y);
-                    estrutura[kitMedico.getPosicaox()][kitMedico.getPosicaoy()] = kitMedico.getSimbolo();
                     listaDeTesouros.add(kitMedico);
                     break;
             }
