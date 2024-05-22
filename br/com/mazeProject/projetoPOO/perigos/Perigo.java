@@ -1,19 +1,38 @@
 package br.com.mazeProject.projetoPOO.perigos;
 
 public abstract class Perigo {
-    private int posicaoLabirinto;
+    private int posicaox;
+    private int posicaoy;
     private int danoPotencial;
+    private char simbolo;
 
-    public Perigo(int posicaoLabirinto, int danoPotencial){
-        this.posicaoLabirinto = posicaoLabirinto;
-        this.danoPotencial = danoPotencial;
+    public Perigo(int posicaox, int posicaoy){
+        this.posicaox = posicaox;
+        this.posicaoy = posicaoy;
     }
 
-    void setPosicaoLabirinto(int posicaoLabirinto){
-        this.posicaoLabirinto = posicaoLabirinto;
+    public char getSimbolo() {
+        return simbolo;
     }
-    int getPosicaoLabirinto(){
-        return posicaoLabirinto;
+
+    public void setSimbolo(char simbolo) {
+        this.simbolo = simbolo;
+    }
+
+    public int getPosicaox() {
+        return posicaox;
+    }
+
+    public void setPosicaox(int posicaox) {
+        this.posicaox = posicaox;
+    }
+
+    public int getPosicaoy() {
+        return posicaoy;
+    }
+
+    public void setPosicaoy(int posicaoy) {
+        this.posicaoy = posicaoy;
     }
 
     void setDanoPotencial(int danoPotencial){
