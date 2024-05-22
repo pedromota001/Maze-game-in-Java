@@ -92,7 +92,10 @@ public class Labirinto {
         int posicaoxA = aventureiro.getPosicaox();
         int posicaoyA = aventureiro.getPosicaoy();
         if(estrutura[posicaoxA][posicaoyA] == 'M'){
+            MoedaDeOuro moedaDeOuro  = new MoedaDeOuro(posicaoxA,posicaoyA);
+            aventureiro.setTesourosColetados(moedaDeOuro);
             System.out.println("Parabens, voce ganhou uma moeda de ouro!!! Agora ja sao: " + aventureiro.getQtdMoedas());
+
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'L'){
             System.out.println("Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ");

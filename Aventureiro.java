@@ -51,8 +51,8 @@ public class Aventureiro {
         this.posicaoy = posicaoy;
     }
 
-    void setTesourosColetados(ArrayList<Tesouro> tesourosColetados){
-        this.tesourosColetados = tesourosColetados;
+    void setTesourosColetados(Tesouro t){
+        this.tesourosColetados.add(t);
     }
 
     public ArrayList<Tesouro> getTesourosColetados() {

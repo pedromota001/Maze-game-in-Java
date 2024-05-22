@@ -7,4 +7,10 @@ public class Localizador extends Tesouro{
         super(posicaox, posicaoy);
         setSimbolo('L');
     }
+
+
+    public void revelador(int x, int y){
+
+    }
+
 }
