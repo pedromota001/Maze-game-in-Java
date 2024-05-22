@@ -1,3 +1,5 @@
+package br.com.mazeProject.projetoPOO;
+
 import br.com.mazeProject.projetoPOO.tesouro.MoedaDeOuro;
 import br.com.mazeProject.projetoPOO.tesouro.Tesouro;
 

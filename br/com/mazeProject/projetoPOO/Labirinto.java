@@ -1,3 +1,6 @@
+package br.com.mazeProject.projetoPOO;
+
+import br.com.mazeProject.projetoPOO.Aventureiro;
 import br.com.mazeProject.projetoPOO.perigos.BuracoMetal;
 import br.com.mazeProject.projetoPOO.perigos.Espinho;
 import br.com.mazeProject.projetoPOO.perigos.Fogo;
@@ -99,7 +102,9 @@ public class Labirinto {
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'L'){
             System.out.println("Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ");
-            //implementar logica de revelacao
+            Localizador localizador = new Localizador(posicaoxA, posicaoyA);
+            localizador.revelador(aventureiro, tamanho, estrutura);
+            aventureiro.setTesourosColetados(localizador);
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'K'){
             System.out.println("Voce teve 25 pontos da sua vida recuperada, tome cuidado!");
