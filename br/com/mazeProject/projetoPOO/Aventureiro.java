@@ -62,11 +62,37 @@ public class Aventureiro {
         return tesourosColetados;
     }
 
-    public void moverAventureiroFrente(){
-        posicaoy++;
+    public void moverAventureiroDireita(int tam){
+        if(posicaoy == tam - 1){
+            System.out.println("Voce ja esta no canto direito do mapa! ");
+        }
+        else{
+            posicaoy++;
+        }
     }
-    public void moverAventureiroBaixo(){
-        posicaox++;
+    public void moverAventureiroCima(){
+        if(posicaox == 0){
+            System.out.println("Voce ja esta muito pra cima, nao eh possivel subir mais!");
+        }
+        else{
+            posicaox--;
+        }
+    }
+    public void moverAventureiroEsquerda(){
+        if(posicaoy == 0){
+            System.out.println("Voce ja esta muito no canto esquerdo do mapa!");
+        }
+        else{
+            posicaoy--;
+        }
+    }
+    public void moverAventureiroBaixo(int tam){
+        if(posicaox == tam - 1){
+            System.out.println("Voce ja esta muito embaixo do mapa, nao eh possivel descer mais! ");
+        }
+        else{
+            posicaox++;
+        }
     }
 
     public void verificaMoedas(ArrayList<Tesouro> tesourosColetados){
