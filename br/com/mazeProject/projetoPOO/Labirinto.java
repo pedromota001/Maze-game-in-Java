@@ -140,6 +140,25 @@ public class Labirinto {
         }
     }
 
+    public String toString(Aventureiro aventureiro){
+        int posicaoX = aventureiro.getPosicaox();
+        int posicaoY = aventureiro.getPosicaoy();
+
+        if(estrutura[posicaoX][posicaoY] == 'M'){
+            return "Parabéns você ganhou uma moeda de ouro!!";
+        } else if(estrutura[posicaoX][posicaoY] == 'L'){
+            return "Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ";
+        } else if(estrutura[posicaoX][posicaoY] == 'K'){
+            return "Voce teve 25 pontos da sua vida recuperada, tome cuidado!";
+        } else if(estrutura[posicaoX][posicaoY] == 'F'){
+            return "Voce caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!";
+        } else if(estrutura[posicaoX][posicaoY] == 'E'){
+            return "Voce caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida!";
+        } else if(estrutura[posicaoX][posicaoY] == 'B'){
+            return "Voce caiu num buraco, tome cuidado, perdeu 40 pontos da sua vida!";
+        }
+        return "Espaço vazio!";
+    }
     public boolean verificaVida(Aventureiro aventureiro){
         if(aventureiro.getVidaAventureiro() == 0){
             return false;

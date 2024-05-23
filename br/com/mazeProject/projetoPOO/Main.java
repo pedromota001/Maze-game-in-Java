@@ -21,6 +21,10 @@ public class Main {
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
         Dimension buttonSize = new Dimension(50,50);
+        JTextArea messageArea = new JTextArea(5,20);
+
+        messageArea.setEditable(false);
+        JScrollPane scrollPane = new JScrollPane(messageArea);
 
         JButton buttonCima = new JButton("↑");
         buttonCima.setPreferredSize(buttonSize);
@@ -50,6 +54,12 @@ public class Main {
         gbc.gridy = 1;
         panel.add(buttonDireita, gbc);
 
+        gbc.gridx = 0;
+        gbc.gridy = 3;
+        gbc.gridwidth = 3;
+        gbc.insets = new Insets(10, 0, 0, 0);
+        panel.add(scrollPane, gbc);
+
         frame.setSize(900,650);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setTitle("Labirinto de Lex!");
@@ -65,6 +75,13 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 aventureiro.moverAventureiroCima();
+
+                messageArea.setText("");
+                String temporario = labirinto.toString(aventureiro);
+                messageArea.append(temporario);
+
+                labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
+
             }
         });
 
@@ -72,6 +89,12 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 aventureiro.moverAventureiroBaixo(tamanhoLab);
+
+                messageArea.setText("");
+                String temporario2 = labirinto.toString(aventureiro);
+                messageArea.append(temporario2);
+
+                labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
             }
         });
 
@@ -79,6 +102,12 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 aventureiro.moverAventureiroDireita(tamanhoLab);
+
+                messageArea.setText("");
+                String temporario3 = labirinto.toString(aventureiro);
+                messageArea.append(temporario3);
+
+                labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
             }
         });
 
@@ -86,6 +115,12 @@ public class Main {
             @Override
             public void actionPerformed(ActionEvent actionEvent) {
                 aventureiro.moverAventureiroEsquerda();
+
+                messageArea.setText("");
+                String temporario4 = labirinto.toString(aventureiro);
+                messageArea.append(temporario4);
+
+                labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
             }
         });
 
