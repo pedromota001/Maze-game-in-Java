@@ -8,8 +8,8 @@ import java.util.ArrayList;
 public class Aventureiro {
     private int vidaAventureiro = 100;
     private String nome;
-    private int posicaox;
-    private int posicaoy;
+    private int posicaox = 0;
+    private int posicaoy = 0;
     private ArrayList<Tesouro> tesourosColetados;
     private int qtdMoedas = 0;
 
@@ -78,5 +78,8 @@ public class Aventureiro {
 
     public void tiraVida(int qtdVida){
         vidaAventureiro -= qtdVida;
+        if(vidaAventureiro <= 0){
+            vidaAventureiro = 0;
+        }
     }
 }

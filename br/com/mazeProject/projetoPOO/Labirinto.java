@@ -112,7 +112,6 @@ public class Labirinto {
         else if(estrutura[posicaoxA][posicaoyA] == 'F'){
             System.out.println("Voce caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!");
             aventureiro.tiraVida(25);
-            System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'E'){
             System.out.println("Voce caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida! ");
@@ -125,6 +124,22 @@ public class Labirinto {
             System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
         }
     }
+
+    public boolean verificaVida(Aventureiro aventureiro){
+        if(aventureiro.getVidaAventureiro() == 0){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+    public void adicionaTesouroFinal(int tamanho){
+        Random random = new Random();
+        int x = random.nextInt();
+    }
+
+
 
     public void exibeLabirinto() {
         System.out.print("  ");
