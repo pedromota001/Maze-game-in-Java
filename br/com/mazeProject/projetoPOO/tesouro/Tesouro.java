@@ -35,10 +35,10 @@ public abstract class Tesouro {
         this.posicaoy = posicaoy;
     }
 
-    void setValorPontos(int valorPontos){
+    public void setValorPontos(int valorPontos){
         this.valorPontos = valorPontos;
     }
-    int getValorPontos(){
+    public int getValorPontos(){
         return valorPontos;
     }
 

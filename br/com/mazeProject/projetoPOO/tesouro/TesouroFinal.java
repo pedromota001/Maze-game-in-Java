@@ -5,5 +5,6 @@ public class TesouroFinal extends Tesouro{
     public TesouroFinal(int posicaox, int posicaoy) {
         super(posicaox, posicaoy);
         setSimbolo('W');
+        setValorPontos(300);
     }
 }

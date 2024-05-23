@@ -97,16 +97,27 @@ public class Labirinto {
         if(estrutura[posicaoxA][posicaoyA] == 'M'){
             MoedaDeOuro moedaDeOuro  = new MoedaDeOuro(posicaoxA,posicaoyA);
             aventureiro.setTesourosColetados(moedaDeOuro);
+            aventureiro.ganhaPontos(moedaDeOuro.getValorPontos());
+            removeTesouro(posicaoxA,posicaoyA);
+            listaDeTesouros.remove(moedaDeOuro);
             System.out.println("Parabens, voce ganhou uma moeda de ouro!!! Agora ja sao: " + aventureiro.getQtdMoedas());
-
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'L'){
-            System.out.println("Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ");
             Localizador localizador = new Localizador(posicaoxA, posicaoyA);
             localizador.revelador(aventureiro, tamanho, estrutura);
             aventureiro.setTesourosColetados(localizador);
+            aventureiro.ganhaPontos(localizador.getValorPontos());
+            removeTesouro(posicaoxA, posicaoyA);
+            listaDeTesouros.remove(localizador);
+            System.out.println("Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ");
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'K'){
+            KitMedico kitMedico = new KitMedico(posicaoxA, posicaoyA);
+            aventureiro.recuperaVida(kitMedico.getVidaRecuperada());
+            aventureiro.setTesourosColetados(kitMedico);
+            aventureiro.ganhaPontos(kitMedico.getValorPontos());
+            removeTesouro(posicaoxA, posicaoyA);
+            listaDeTesouros.remove(kitMedico);
             System.out.println("Voce teve 25 pontos da sua vida recuperada, tome cuidado!");
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'F'){
@@ -138,6 +149,12 @@ public class Labirinto {
         Random random = new Random();
         int x = random.nextInt();
     }
+    public void removeTesouro(int x, int y){
+        if(estrutura[x][y] == 'M' || estrutura[x][y] == 'L' || estrutura[x][y] == 'K'){
+            estrutura[x][y] = ' ';
+        }
+    }
+
 
 
 

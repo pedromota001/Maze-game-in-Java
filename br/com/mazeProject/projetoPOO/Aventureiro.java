@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 public class Aventureiro {
     private int vidaAventureiro = 100;
+    private int quantidadeDePontos = 0;
     private String nome;
     private int posicaox = 0;
     private int posicaoy = 0;
@@ -74,6 +75,13 @@ public class Aventureiro {
                 qtdMoedas++;
             }
         }
+    }
+    public void ganhaPontos(int qtdPontos){
+        quantidadeDePontos += qtdPontos;
+    }
+
+    public void recuperaVida(int vida){
+        vidaAventureiro += vida;
     }
 
     public void tiraVida(int qtdVida){
