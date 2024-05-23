@@ -131,7 +131,7 @@ public class Labirinto {
             aventureiro.tiraVida(40);
         }*/
     }
-
+    //miguel eh frango
     public String toString(Aventureiro aventureiro){
         int posicaoX = aventureiro.getPosicaox();
         int posicaoY = aventureiro.getPosicaoy();
