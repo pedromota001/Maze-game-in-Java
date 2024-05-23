@@ -26,6 +26,10 @@ public class Labirinto {
         this.listaDeTesouros = new ArrayList<>();
     }
 
+    public int getTamanho() {
+        return tamanho;
+    }
+
     public void gerarLabirinto(){
         //implementar
         Random random = new Random();
