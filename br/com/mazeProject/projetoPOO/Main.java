@@ -19,9 +19,13 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         JFrame frame = new JFrame();
         JPanel panel = new JPanel(new GridBagLayout());
+        JLabel messageLabel = new JLabel("", SwingConstants.CENTER);
+        messageLabel.setPreferredSize(new Dimension(200,200));
         GridBagConstraints gbc = new GridBagConstraints();
         Dimension buttonSize = new Dimension(50,50);
+        Dimension gameOverSize = new Dimension(150, 150);
         JTextArea messageArea = new JTextArea(5,20);
+
 
         messageArea.setEditable(false);
         JScrollPane scrollPane = new JScrollPane(messageArea);
@@ -60,6 +64,12 @@ public class Main {
         gbc.insets = new Insets(10, 0, 0, 0);
         panel.add(scrollPane, gbc);
 
+        gbc.gridx = 2;
+        gbc.gridy = 0;
+        gbc.anchor = GridBagConstraints.NORTHEAST;
+        gbc.insets = new Insets(10, 10, 0, 10);
+        panel.add(messageLabel, gbc);
+
         frame.setSize(900,650);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setTitle("Labirinto de Lex!");
@@ -81,7 +91,17 @@ public class Main {
                 messageArea.append(temporario);
 
                 labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
+                String vida = String.valueOf(aventureiro.getVidaAventureiro());
+                messageLabel.setText(vida + "HP");
 
+                if(!labirinto.verificaVida(aventureiro)) {
+                    messageArea.setText("");
+                    messageArea.setText("GAME OVER!");
+                    buttonDireita.setVisible(false);
+                    buttonBaixo.setVisible(false);
+                    buttonCima.setVisible(false);
+                    buttonEsquerda.setVisible(false);
+                }
             }
         });
 
@@ -95,6 +115,17 @@ public class Main {
                 messageArea.append(temporario2);
 
                 labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
+                String vida = String.valueOf(aventureiro.getVidaAventureiro());
+                messageLabel.setText(vida + "HP");
+
+                if(!labirinto.verificaVida(aventureiro)) {
+                    messageArea.setText("");
+                    messageArea.setText("GAME OVER!");
+                    buttonDireita.setVisible(false);
+                    buttonBaixo.setVisible(false);
+                    buttonCima.setVisible(false);
+                    buttonEsquerda.setVisible(false);
+                }
             }
         });
 
@@ -108,6 +139,17 @@ public class Main {
                 messageArea.append(temporario3);
 
                 labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
+                String vida = String.valueOf(aventureiro.getVidaAventureiro());
+                messageLabel.setText(vida + "HP");
+
+                if(!labirinto.verificaVida(aventureiro)) {
+                    messageArea.setText("");
+                    messageArea.setText("GAME OVER!");
+                    buttonDireita.setVisible(false);
+                    buttonBaixo.setVisible(false);
+                    buttonCima.setVisible(false);
+                    buttonEsquerda.setVisible(false);
+                }
             }
         });
 
@@ -121,6 +163,17 @@ public class Main {
                 messageArea.append(temporario4);
 
                 labirinto.exibicaoEmovimentacaoAventureiro(aventureiro);
+                String vida = String.valueOf(aventureiro.getVidaAventureiro());
+                messageLabel.setText(vida + "HP");
+
+                if(!labirinto.verificaVida(aventureiro)) {
+                    messageArea.setText("");
+                    messageArea.setText("GAME OVER!");
+                    buttonDireita.setVisible(false);
+                    buttonBaixo.setVisible(false);
+                    buttonCima.setVisible(false);
+                    buttonEsquerda.setVisible(false);
+                }
             }
         });
 

@@ -104,7 +104,6 @@ public class Labirinto {
             aventureiro.ganhaPontos(moedaDeOuro.getValorPontos());
             removeTesouro(posicaoxA,posicaoyA);
             listaDeTesouros.remove(moedaDeOuro);
-            System.out.println("Parabens, voce ganhou uma moeda de ouro!!! Agora ja sao: " + aventureiro.getQtdMoedas());
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'L'){
             Localizador localizador = new Localizador(posicaoxA, posicaoyA);
@@ -113,7 +112,6 @@ public class Labirinto {
             aventureiro.ganhaPontos(localizador.getValorPontos());
             removeTesouro(posicaoxA, posicaoyA);
             listaDeTesouros.remove(localizador);
-            System.out.println("Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ");
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'K'){
             KitMedico kitMedico = new KitMedico(posicaoxA, posicaoyA);
@@ -122,22 +120,16 @@ public class Labirinto {
             aventureiro.ganhaPontos(kitMedico.getValorPontos());
             removeTesouro(posicaoxA, posicaoyA);
             listaDeTesouros.remove(kitMedico);
-            System.out.println("Voce teve 25 pontos da sua vida recuperada, tome cuidado!");
-        }
+        }/*
         else if(estrutura[posicaoxA][posicaoyA] == 'F'){
-            System.out.println("Voce caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!");
             aventureiro.tiraVida(25);
         }
         else if(estrutura[posicaoxA][posicaoyA] == 'E'){
-            System.out.println("Voce caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida! ");
             aventureiro.tiraVida(15);
-            System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
         }
         else{
-            System.out.println("Voce caiu num buraco, tome cuidado, perdeu 40 pontos da sua vida! ");
             aventureiro.tiraVida(40);
-            System.out.println("Sua vida atual: " + aventureiro.getVidaAventureiro());
-        }
+        }*/
     }
 
     public String toString(Aventureiro aventureiro){
@@ -151,10 +143,13 @@ public class Labirinto {
         } else if(estrutura[posicaoX][posicaoY] == 'K'){
             return "Voce teve 25 pontos da sua vida recuperada, tome cuidado!";
         } else if(estrutura[posicaoX][posicaoY] == 'F'){
+            aventureiro.tiraVida(30);
             return "Voce caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!";
         } else if(estrutura[posicaoX][posicaoY] == 'E'){
+            aventureiro.tiraVida(15);
             return "Voce caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida!";
         } else if(estrutura[posicaoX][posicaoY] == 'B'){
+            aventureiro.tiraVida(40);
             return "Voce caiu num buraco, tome cuidado, perdeu 40 pontos da sua vida!";
         }
         return "Espaço vazio!";
@@ -171,6 +166,7 @@ public class Labirinto {
     public void adicionaTesouroFinal(int tamanho){
         Random random = new Random();
         int x = random.nextInt();
+        //terminar dps
     }
     public void removeTesouro(int x, int y){
         if(estrutura[x][y] == 'M' || estrutura[x][y] == 'L' || estrutura[x][y] == 'K'){
