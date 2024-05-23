@@ -22,22 +22,17 @@ public class Main {
         GridBagConstraints gbc = new GridBagConstraints();
         Dimension buttonSize = new Dimension(50,50);
 
-        JButton buttonCima = new JButton();
+        JButton buttonCima = new JButton("↑");
         buttonCima.setPreferredSize(buttonSize);
 
-        JButton buttonBaixo = new JButton();
+        JButton buttonBaixo = new JButton("↓");
         buttonBaixo.setPreferredSize(buttonSize);
 
-        JButton buttonEsquerda = new JButton();
+        JButton buttonEsquerda = new JButton("←");
         buttonEsquerda.setPreferredSize(buttonSize);
 
-        JButton buttonDireita = new JButton();
+        JButton buttonDireita = new JButton("→");
         buttonDireita.setPreferredSize(buttonSize);
-
-        buttonCima.setIcon(new ImageIcon("setacima.png"));
-        buttonBaixo.setIcon(new ImageIcon("setabaixo.png"));
-        buttonEsquerda.setIcon(new ImageIcon("setaesquerda.png"));
-        buttonDireita.setIcon(new ImageIcon("setadireita.png"));
 
         gbc.gridx = 1;
         gbc.gridy = 0;
@@ -98,16 +93,5 @@ public class Main {
 
         frame.setVisible(true);
 
-
-
-
-
-
-
-
-
-        for(int i = 0; i < tamanhoLab*tamanhoLab; i++){
-
-        }
     }
 }
