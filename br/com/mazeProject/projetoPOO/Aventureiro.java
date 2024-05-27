@@ -21,6 +21,7 @@ public class Aventureiro {
         this.tesourosColetados = new ArrayList<>();
     }
 
+    public int getQuantidadeDePontos() { return quantidadeDePontos; }
     public int getVidaAventureiro() {
         return vidaAventureiro;
     }
@@ -102,6 +103,11 @@ public class Aventureiro {
             }
         }
     }
+
+    public void adicionarMoedas(){
+        qtdMoedas++;
+    }
+
     public void ganhaPontos(int qtdPontos){
         quantidadeDePontos += qtdPontos;
     }

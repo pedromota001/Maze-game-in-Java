@@ -19,6 +19,8 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         JFrame frame = new JFrame();
         JPanel panel = new JPanel(new GridBagLayout());
+        JPanel panel2 = new JPanel();
+        panel2.setLayout(new BoxLayout(panel2, BoxLayout.Y_AXIS));
         JLabel messageLabel = new JLabel("", SwingConstants.CENTER);
         messageLabel.setPreferredSize(new Dimension(200,200));
         GridBagConstraints gbc = new GridBagConstraints();
@@ -43,7 +45,7 @@ public class Main {
         buttonDireita.setPreferredSize(buttonSize);
 
         gbc.gridx = 1;
-        gbc.gridy = 0;
+        gbc.gridy = 1;
         panel.add(buttonCima, gbc);
 
         gbc.gridx = 1;
@@ -69,6 +71,8 @@ public class Main {
         gbc.anchor = GridBagConstraints.NORTHEAST;
         gbc.insets = new Insets(10, 10, 0, 10);
         panel.add(messageLabel, gbc);
+
+
 
         frame.setSize(900,650);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -97,6 +101,8 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
+                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
+                    messageArea.append("Quantidades de pontos: " + aventureiro.getQuantidadeDePontos());
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);
@@ -121,10 +127,13 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
+                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
+                    messageArea.append("Quantidades de localizadores: " + aventureiro.getQuantidadeDePontos());
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);
                     buttonEsquerda.setVisible(false);
+
                 }
             }
         });
@@ -145,6 +154,8 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
+                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
+                    messageArea.append("Quantidades de localizadores: " + aventureiro.getQuantidadeDePontos());
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);
@@ -169,6 +180,8 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
+                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
+                    messageArea.append("Quantidades de localizadores: " + aventureiro.getQuantidadeDePontos());
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);

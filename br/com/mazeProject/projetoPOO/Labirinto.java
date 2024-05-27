@@ -101,6 +101,7 @@ public class Labirinto {
         if(estrutura[posicaoxA][posicaoyA] == 'M'){
             MoedaDeOuro moedaDeOuro  = new MoedaDeOuro(posicaoxA,posicaoyA);
             aventureiro.setTesourosColetados(moedaDeOuro);
+            aventureiro.adicionarMoedas();
             aventureiro.ganhaPontos(moedaDeOuro.getValorPontos());
             removeTesouro(posicaoxA,posicaoyA);
             listaDeTesouros.remove(moedaDeOuro);
