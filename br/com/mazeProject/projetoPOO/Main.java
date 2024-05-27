@@ -1,5 +1,6 @@
 package br.com.mazeProject.projetoPOO;
 import java.awt.*;
+import java.io.File;
 import java.util.Scanner;
 import br.com.mazeProject.projetoPOO.Labirinto;
 import javax.swing.JPanel;
@@ -11,19 +12,27 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Main {
-    static void labirinto(){
 
-    }
     public static void main(String[] args) {
         Aventureiro aventureiro = new Aventureiro("Aventureiro" , 0, 0);
         Scanner scanner = new Scanner(System.in);
         JFrame frame = new JFrame();
         JPanel panel = new JPanel(new GridBagLayout());
-        JPanel panel2 = new JPanel();
-        panel2.setLayout(new BoxLayout(panel2, BoxLayout.Y_AXIS));
+
+        JLabel label2 = new JLabel();
+        ImageIcon image = new ImageIcon("../Maze-game-in-Java/br/com/mazeProject/projetoPOO/fotos/gameover.png");
+
+        File imageFile = new File("../Maze-game-in-Java/br/com/mazeProject/projetoPOO/fotos/gameover.png");
+
+        if(!imageFile.exists()){
+            System.out.println("Imagem não encontrada!");
+        } else{
+            System.out.println("Imagem carregada com sucesso!");
+        }
+
         JLabel messageLabel = new JLabel("", SwingConstants.CENTER);
         messageLabel.setPreferredSize(new Dimension(200,200));
-        GridBagConstraints gbc = new GridBagConstraints();
+
         Dimension buttonSize = new Dimension(50,50);
         Dimension gameOverSize = new Dimension(150, 150);
         JTextArea messageArea = new JTextArea(5,20);
@@ -43,6 +52,8 @@ public class Main {
 
         JButton buttonDireita = new JButton("→");
         buttonDireita.setPreferredSize(buttonSize);
+
+        GridBagConstraints gbc = new GridBagConstraints();
 
         gbc.gridx = 1;
         gbc.gridy = 1;
@@ -72,15 +83,13 @@ public class Main {
         gbc.insets = new Insets(10, 10, 0, 10);
         panel.add(messageLabel, gbc);
 
-
-
         frame.setSize(900,650);
         frame.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         frame.setTitle("Labirinto de Lex!");
         frame.getContentPane().setBackground(new Color(135, 248, 140));
 
-        JOptionPane.showMessageDialog(null, "BEM VINDO AVENTUREIRO", "LABIRINTO", JOptionPane.INFORMATION_MESSAGE);
-        String stringLab = JOptionPane.showInputDialog("Digite o tamanho do labirinto que voce deseja jogar: ");
+        JOptionPane.showMessageDialog(null, "BEM-VINDO AVENTUREIRO", "LABIRINTO", JOptionPane.INFORMATION_MESSAGE);
+        String stringLab = JOptionPane.showInputDialog("Digite o tamanho do labirinto que você deseja jogar: ");
         int tamanhoLab = Integer.parseInt(stringLab);
         Labirinto labirinto = new Labirinto(tamanhoLab);
         labirinto.gerarLabirinto();
@@ -101,8 +110,10 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
-                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
-                    messageArea.append("Quantidades de pontos: " + aventureiro.getQuantidadeDePontos());
+                    messageLabel.setIcon(image);
+                    messageLabel.setText("PONTOS: " + aventureiro.getQuantidadeDePontos() + "   MOEDAS: " + aventureiro.getQtdMoedas());
+                    messageLabel.setHorizontalTextPosition(JLabel.CENTER);
+                    messageLabel.setVerticalTextPosition(JLabel.BOTTOM);
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);
@@ -127,8 +138,10 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
-                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
-                    messageArea.append("Quantidades de localizadores: " + aventureiro.getQuantidadeDePontos());
+                    messageLabel.setIcon(image);
+                    messageLabel.setText("PONTOS: " + aventureiro.getQuantidadeDePontos() + "   MOEDAS: " + aventureiro.getQtdMoedas());
+                    messageLabel.setHorizontalTextPosition(JLabel.CENTER);
+                    messageLabel.setVerticalTextPosition(JLabel.BOTTOM);
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);
@@ -154,8 +167,10 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
-                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
-                    messageArea.append("Quantidades de localizadores: " + aventureiro.getQuantidadeDePontos());
+                    messageLabel.setIcon(image);
+                    messageLabel.setText("PONTOS: " + aventureiro.getQuantidadeDePontos() + "   MOEDAS: " + aventureiro.getQtdMoedas());
+                    messageLabel.setHorizontalTextPosition(JLabel.CENTER);
+                    messageLabel.setVerticalTextPosition(JLabel.BOTTOM);
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);
@@ -180,8 +195,10 @@ public class Main {
                 if(!labirinto.verificaVida(aventureiro)) {
                     messageArea.setText("");
                     messageArea.setText("GAME OVER!");
-                    messageArea.append("Quantidades de moedas coletadas: "+ aventureiro.getQtdMoedas());
-                    messageArea.append("Quantidades de localizadores: " + aventureiro.getQuantidadeDePontos());
+                    messageLabel.setIcon(image);
+                    messageLabel.setText("PONTOS: " + aventureiro.getQuantidadeDePontos() + "   MOEDAS: " + aventureiro.getQtdMoedas());
+                    messageLabel.setHorizontalTextPosition(JLabel.CENTER);
+                    messageLabel.setVerticalTextPosition(JLabel.BOTTOM);
                     buttonDireita.setVisible(false);
                     buttonBaixo.setVisible(false);
                     buttonCima.setVisible(false);

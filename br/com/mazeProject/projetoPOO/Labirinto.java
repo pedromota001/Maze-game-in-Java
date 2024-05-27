@@ -121,18 +121,9 @@ public class Labirinto {
             aventureiro.ganhaPontos(kitMedico.getValorPontos());
             removeTesouro(posicaoxA, posicaoyA);
             listaDeTesouros.remove(kitMedico);
-        }/*
-        else if(estrutura[posicaoxA][posicaoyA] == 'F'){
-            aventureiro.tiraVida(25);
         }
-        else if(estrutura[posicaoxA][posicaoyA] == 'E'){
-            aventureiro.tiraVida(15);
-        }
-        else{
-            aventureiro.tiraVida(40);
-        }*/
     }
-    //miguel eh frango
+
     public String toString(Aventureiro aventureiro){
         int posicaoX = aventureiro.getPosicaox();
         int posicaoY = aventureiro.getPosicaoy();
@@ -140,18 +131,18 @@ public class Labirinto {
         if(estrutura[posicaoX][posicaoY] == 'M'){
             return "Parabéns você ganhou uma moeda de ouro!!";
         } else if(estrutura[posicaoX][posicaoY] == 'L'){
-            return "Localizador encontrado, as proximas 5 posicoes serao reveladas, fique atento! ";
+            return "Localizador encontrado, as proximas 5 posições serão reveladas, fique atento! ";
         } else if(estrutura[posicaoX][posicaoY] == 'K'){
-            return "Voce teve 25 pontos da sua vida recuperada, tome cuidado!";
+            return "Você teve 25 pontos da sua vida recuperada, tome cuidado!";
         } else if(estrutura[posicaoX][posicaoY] == 'F'){
             aventureiro.tiraVida(30);
-            return "Voce caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!";
+            return "Você caiu no fogo, tome cuidado, perdeu 30 pontos da sua vida!";
         } else if(estrutura[posicaoX][posicaoY] == 'E'){
             aventureiro.tiraVida(15);
-            return "Voce caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida!";
+            return "Você caiu nos espinhos, tome cuidado, perdeu 15 pontos da sua vida!";
         } else if(estrutura[posicaoX][posicaoY] == 'B'){
             aventureiro.tiraVida(40);
-            return "Voce caiu num buraco, tome cuidado, perdeu 40 pontos da sua vida!";
+            return "Você caiu num buraco, tome cuidado, perdeu 40 pontos da sua vida!";
         }
         return "Espaço vazio!";
     }

@@ -65,7 +65,7 @@ public class Aventureiro {
 
     public void moverAventureiroDireita(int tam){
         if(posicaoy == tam - 1){
-            System.out.println("Voce ja esta no canto direito do mapa! ");
+            System.out.println("Você já está no canto direito do mapa! ");
         }
         else{
             posicaoy++;
@@ -73,7 +73,7 @@ public class Aventureiro {
     }
     public void moverAventureiroCima(){
         if(posicaox == 0){
-            System.out.println("Voce ja esta muito pra cima, nao eh possivel subir mais!");
+            System.out.println("Você já está muito para cima, não possível subir mais!");
         }
         else{
             posicaox--;
@@ -81,7 +81,7 @@ public class Aventureiro {
     }
     public void moverAventureiroEsquerda(){
         if(posicaoy == 0){
-            System.out.println("Voce ja esta muito no canto esquerdo do mapa!");
+            System.out.println("Você já está muito no canto esquerdo do mapa!");
         }
         else{
             posicaoy--;
@@ -89,13 +89,14 @@ public class Aventureiro {
     }
     public void moverAventureiroBaixo(int tam){
         if(posicaox == tam - 1){
-            System.out.println("Voce ja esta muito embaixo do mapa, nao eh possivel descer mais! ");
+            System.out.println("Você ja está muito embaixo do mapa, não é possível descer mais! ");
         }
         else{
             posicaox++;
         }
     }
 
+    //acabamos por nao utilizar essa funcao
     public void verificaMoedas(ArrayList<Tesouro> tesourosColetados){
         for(Tesouro t:tesourosColetados){
             if(t instanceof MoedaDeOuro){
