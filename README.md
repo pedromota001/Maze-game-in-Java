@@ -1,6 +1,6 @@
 # Maze-game-in-Java
 Maze game developed in Java
-## ALUNOS : LUÍS GUSTAVO - 848988, RONDON GUILHERME - 850074, GUSTAVO PORTO - 848942, PEDRO MOTA - , MIGUEL PROCÓPIO - .
+## ALUNOS : LUÍS GUSTAVO - 848988, RONDON GUILHERME - 850074, GUSTAVO PORTO - 848942, PEDRO MOTA - 849615, MIGUEL PROCÓPIO - 849029.
 
 # Requisitos Mínimos:
 - Definimos todas as classes básicas (Aventureiro, Perigos, Tesouros, Labirinto).
