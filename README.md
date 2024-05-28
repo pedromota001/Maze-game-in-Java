@@ -32,4 +32,4 @@ Maze game developed in Java
 - Fogo, Buraco e Espinhos (Perigos implementados na lógica de perder vida).
 - Moedas, Localizador e KitMédico (Tesouros implementados na lógica de conquistas pontos).
 # EASTER EGG:
-- No canto da matriz (labirinto) toda vez que ele percorre novamente e tem um perigo ele toma dano novamente, assim sendo como se fosse um borda perigosa que o aventureiro deve ser lembrar e tomar cuidado!
+- No canto da matriz (labirinto) toda vez que ele percorre novamente e tem um perigo ele toma dano novamente, assim sendo como se fosse um borda perigosa que o aventureiro deve se lembrar e tomar cuidado!
