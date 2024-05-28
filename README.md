@@ -6,7 +6,7 @@ Maze game developed in Java
 - Definimos todas as classes básicas (Aventureiro, Perigos, Tesouros, Labirinto).
 - Coleções utilizamos ArrayLists (exemplo: ArrayList<Tesouro> tesourosColetados) utilizado para armazenar todos os tesouros armazenados pelo labirinto.
 - Na parte de tratamento de exceções utilizamos o try catch exception para verificar a existência de um arquivo e se ele abre dentro da classe Main.
-- Polimorfismo // continuar
+- Nos ArrayLists de tesouro e perigos, usamos como parametro as superclasses "Tesouro" e "Perigo" para conseguirmos incluir todas as classes filhas que herdam essas classes mães, além disso temos como exemplo uma função que utiliza como parâmetro uma instância de classe Tesouro para podermos manipular todas as classes filhas, fazendo assim bom uso do polimofismo.
 - Na abstração utilizamos a classe Perigo e Tesouro como abstratas, além de serem SuperClasses herdando suas carecteristicas para vários tipos de perigos e tesouros.
 - Os conceitos de public e private estão presentes na classe (não tem muito o que falar).
 # Requisitos Adicionais:
@@ -31,4 +31,5 @@ Maze game developed in Java
 ## Classes Extras:
 - Fogo, Buraco e Espinhos (Perigos implementados na lógica de perder vida).
 - Moedas, Localizador e KitMédico (Tesouros implementados na lógica de conquistas pontos).
-
+# EASTER EGG:
+- No canto da matriz (labirinto) toda vez que ele percorre novamente e tem um perigo ele toma dano novamente, assim sendo como se fosse um borda perigosa que o aventureiro deve ser lembrar e tomar cuidado!
